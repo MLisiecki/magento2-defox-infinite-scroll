@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Defox_InfiniteScroll
+ * @author      Marcin Lisiecki
+ * @copyright   Copyright (c) 2026 deFox
+ * @license     GNU General Public License v3.0
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <catalog>
+            <infinite_scroll>
+                <enabled>0</enabled>
+                <autoload_pages>2</autoload_pages>
+            </infinite_scroll>
+        </catalog>
+    </default>
+</config>

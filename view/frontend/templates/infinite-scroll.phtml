@@ -1,0 +1,15 @@
+<?php
+/**
+ * @package     Defox_InfiniteScroll
+ * @author      Marcin Lisiecki
+ * @copyright   Copyright (c) 2026 deFox
+ * @license     GNU General Public License v3.0
+ */
+
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Defox\InfiniteScroll\ViewModel\Config $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+<script type="text/x-magento-init">
+    {"*": {"Defox_InfiniteScroll/js/infinite-scroll": <?= /* @noEscape */ $viewModel->getJsonConfig((array) $block->getData('js_options')) ?>}}
+</script>

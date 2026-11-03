@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Defox_InfiniteScroll
+ * @author      Marcin Lisiecki
+ * @copyright   Copyright (c) 2026 deFox
+ * @license     GNU General Public License v3.0
+ *
+ * Shared handle, included by catalog_category_view and catalogsearch_result_index.
+ * Themes override selectors with <referenceBlock name="defox.infinite.scroll"> + <arguments>
+ * (array items are merged, so only the changed item needs to be declared).
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="defox.infinite.scroll"
+                   template="Defox_InfiniteScroll::infinite-scroll.phtml"
+                   ifconfig="catalog/infinite_scroll/enabled"
+                   after="-">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Defox\InfiniteScroll\ViewModel\Config</argument>
+                    <argument name="js_options" xsi:type="array">
+                        <item name="pageParam" xsi:type="string">p</item>
+                        <item name="offset" xsi:type="string">400</item>
+                        <item name="skeletons" xsi:type="number">4</item>
+                        <item name="selectors" xsi:type="array">
+                            <item name="container" xsi:type="string">.products.wrapper .product-items</item>
+                            <item name="item" xsi:type="string">.product-item</item>
+                            <item name="pager" xsi:type="string">.toolbar .pages</item>
+                            <item name="nextLink" xsi:type="string">.toolbar .pages .action.next</item>
+                            <item name="insertAfter" xsi:type="string">.products.wrapper</item>
+                            <item name="amount" xsi:type="string">.toolbar-amount</item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

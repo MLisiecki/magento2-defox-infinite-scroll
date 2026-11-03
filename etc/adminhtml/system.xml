@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Defox_InfiniteScroll
+ * @author      Marcin Lisiecki
+ * @copyright   Copyright (c) 2026 deFox
+ * @license     GNU General Public License v3.0
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="defox" translate="label" sortOrder="1000">
+            <label>DEFOX</label>
+        </tab>
+        <!-- Stores > Configuration > DEFOX > Infinite Scroll; values stay at catalog/infinite_scroll/* (config_path) -->
+        <section id="defox_infinite_scroll" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Infinite Scroll</label>
+            <tab>defox</tab>
+            <resource>Defox_InfiniteScroll::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Infinite scroll</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Category pages and search results. When disabled, standard pagination is used.</comment>
+                    <config_path>catalog/infinite_scroll/enabled</config_path>
+                </field>
+                <field id="autoload_pages" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Auto-load pages before button</label>
+                    <comment>Number of next pages loaded automatically while scrolling before the "Show more" button appears. 0 = button only.</comment>
+                    <validate>required-entry validate-digits</validate>
+                    <config_path>catalog/infinite_scroll/autoload_pages</config_path>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

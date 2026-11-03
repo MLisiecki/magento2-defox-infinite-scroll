@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Defox_InfiniteScroll
+ * @author      Marcin Lisiecki
+ * @copyright   Copyright (c) 2026 deFox
+ * @license     GNU General Public License v3.0
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="defox_infinite_scroll"/>
+</page>
